@@ -15,6 +15,9 @@ import {
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { HamburgerMenu } from "./hamburger-menu";
+import { useTheme } from "next-themes";
+import { Button } from "../button";
+import { Moon, Sun } from "lucide-react";
 
 const components: { title: string; href: string; description: string }[] = [
 	{
@@ -55,6 +58,7 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function NavBar() {
+	const { theme, setTheme } = useTheme();
 	return (
 		<header className="border-b-2 py-3">
 			<section className="container  flex justify-between">
@@ -133,6 +137,21 @@ export function NavBar() {
 									Login
 								</NavigationMenuLink>
 							</Link>
+						</NavigationMenuItem>
+						<NavigationMenuItem>
+							<Button
+								variant={"ghost"}
+								aria-label="toggle theme"
+								size={"icon"}
+								onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+							>
+								{theme === "dark" && (
+									<Moon className="h-6 w-6 rotate-0 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+								)}
+								{theme === "light" && (
+									<Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+								)}
+							</Button>
 						</NavigationMenuItem>
 					</NavigationMenuList>
 				</NavigationMenu>

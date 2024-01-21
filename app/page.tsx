@@ -3,5 +3,5 @@
 import * as React from "react";
 
 export default function Home() {
-	return <div className="container">body</div>;
+	return <main className="container pt-4 ">body</main>;
 }
