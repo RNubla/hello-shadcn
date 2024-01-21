@@ -14,6 +14,7 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { HamburgerMenu } from "./hamburger-menu";
 
 const components: { title: string; href: string; description: string }[] = [
 	{
@@ -55,9 +56,12 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavBar() {
 	return (
-		<div className="container container border-b-2 flex justify-between">
+		<div className="container  border-b-2 flex justify-between">
 			<NavigationMenu>
 				<NavigationMenuList>
+					<NavigationMenuItem>
+						<HamburgerMenu />
+					</NavigationMenuItem>
 					<NavigationMenuItem>
 						<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
 						<NavigationMenuContent>
