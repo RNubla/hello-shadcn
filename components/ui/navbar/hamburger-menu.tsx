@@ -18,7 +18,7 @@ export function HamburgerMenu() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant={"ghost"}>
+				<Button variant={"ghost"} aria-label="Toggle Menu">
 					<Menu />
 				</Button>
 			</SheetTrigger>
